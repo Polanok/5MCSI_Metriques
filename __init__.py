@@ -5,7 +5,9 @@ from datetime import datetime
 from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
-app = Flask(__name__)          #co                                                                                                      
+app = Flask(__name__)
+csrf = CSRFProtect()
+csrf.init_app(app) # Compliant
                                                                                                                                        
 @app.route('/')
 def hello_world():
